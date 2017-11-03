@@ -1,0 +1,14 @@
+## MATRIX OS DevKit
+
+This is only useful if you intend on developing MATRIX OS on devices. 
+
+### Features
+#### Setup commands
+- `mpre` - Installs git and zsh.
+- `minstall1` - Adds matrix software to apt
+- `minstall2` - Installs malos/core
+- `mupgrade` - Updates installed packages
+
+#### Useful commands
+- `nrd` - `npm run debug` - starts MOS
+

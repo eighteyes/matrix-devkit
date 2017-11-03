@@ -1,0 +1,48 @@
+function mpre(){
+ sudo apt-get update;
+ sudo apt-get install git zsh;
+ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+
+function minstall1(){
+# Add repo and key
+curl https://apt.matrix.one/doc/apt-key.gpg | sudo apt-key add -;
+echo "deb https://apt.matrix.one/raspbian $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/matrixlabs.list;
+
+# Update packages and install
+sudo apt-get update;
+sudo apt-get upgrade;
+}
+
+function minstall2(){
+  sudo apt-get install matrixio-malos;
+  sudo reboot;
+}
+
+function mupgrade(){
+  sudo apt-get update && sudo apt-get upgrade;
+sudo reboot;
+}
+
+alias msvc="sudo systemctl status matrixio-malos"
+
+export NODE_ENV=dev
+
+alias nrd="npm run debug"
+
+alias ns="npm start"
+
+alias grh='git reset --hard'
+
+alias gph='git push'
+alias gpl='git pull'
+alias gc='git checkout'
+
+alias gbd='git log --pretty=format:"%ad %s" --date="short"'
+alias glad='git log --pretty=format:"%an %ar %s" --date="short"'
+alias gl='git log'
+alias glf='git log --oneline --name-only'
+alias glg='git log --graph --oneline --decorate --all'
+alias gls='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate'
+
+alias s='sudo systemctl'
